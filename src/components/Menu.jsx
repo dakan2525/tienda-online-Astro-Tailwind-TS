@@ -1,8 +1,6 @@
 import {RiUserLine, RiAddCircleLine, RiShoppingCartLine, RiCloseLine  } from "react-icons/ri";
 import {RxHamburgerMenu, } from "react-icons/rx";
 
-
-
 const Menu = (props) => {
 
     const {showMenu, showOrder, toggelMenuOrder} = props
