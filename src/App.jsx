@@ -21,7 +21,6 @@ function App() {
       precio: 20000,
       favorito: true,
       cantidadPedida: 1
-
     },
     {
       id: uuid(),
