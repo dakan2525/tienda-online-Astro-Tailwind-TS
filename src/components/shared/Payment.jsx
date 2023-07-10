@@ -2,8 +2,7 @@ import { RiCloseLine } from "react-icons/ri";
 import CardOrder from "../CardOrder";
 
 const Payment = ({ showOrder, toggelMenuOrder, prodCarrito, deleteProdCart, setProdCarrito, setCantidadPedida, totalPagar }) => {
-    const btnPayment =
-        " border-2 border-gray-500 py-2 px-4 rounded-xl text-[#4A8F44] font-bold    hover:bg-[#4A8F44] hover:text-white ";
+    const btnPayment ="p-2 flex justify-center rounded-xl font-bold   hover:bg-[#1F1D2B] shadow-md shadow-t shadow-[#4A8F44] rounded-xl  border-[#4A8F44] transition-all hover:text-white hover:shadow-black hover:bg-[#4A8F44]"
 
     const opciones = { maximumFractionDigits: 0 };
     const totalPagarFormateado = totalPagar.toLocaleString('es-ES', opciones);
@@ -59,7 +58,7 @@ const Payment = ({ showOrder, toggelMenuOrder, prodCarrito, deleteProdCart, setP
             </div>
 
             {/* Submit payment */}
-            <div className="bg-[#111827] absolute  rounded-xl  bottom-0 left-0 w-full px-4 py-3  text-gray-300  lg:py-4 ">
+            <div className=" border-gray-500 border-t-[1px] shadow-xl shadow-slate-950 bg-[#111827] absolute  rounded-xl  bottom-0 left-0 w-full px-4 py-3  text-gray-300  lg:py-4 ">
                 <div className="flex items-center justify-between mb-4  md:justify-between md:mx-16 lg:justify-between lg:mx-2">
                     <span>Descuento</span>
                     <span>$0</span>
@@ -69,7 +68,7 @@ const Payment = ({ showOrder, toggelMenuOrder, prodCarrito, deleteProdCart, setP
                     <span>${totalPagarFormateado} </span>
                 </div>
                 <div className=" md:text-center md:m-4">
-                    <button className="bg-red-600 border-2 border-gray-500 rounded-lg w-full py-2 px-4 md:w-1/2 lg:py-0 ">
+                    <button className="bg-[#F33C3E] border-2 text-white border-gray-500 rounded-lg w-full py-2 px-4 md:w-1/2 lg:py-0 ">
                         Continuar con el Pago
                     </button>
                 </div>

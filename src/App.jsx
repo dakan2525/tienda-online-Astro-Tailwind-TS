@@ -15,63 +15,114 @@ function App() {
   const [datosBase, setDatosBase] = useState([
     {
       id: uuid(),
-      nombre: "Jabon Natural",
-      url: "./imagenes/limpieza-jabon-natural.jpg",
-      descrpcion: "Avena, Miel y Menta",
+      nombre: "Jabon Natural Rosas",
+      url: "./imagenes/personal-jabon-floral.webp",
+      descrpcion: "Frutos de Rojos",
       precio: 20000,
       favorito: true,
-      cantidadPedida: 1
+      cantidadPedida: 1,
+      categoria: "Aseo Personal"
     },
     {
       id: uuid(),
-      nombre: "Botella GYM",
-      url: "./imagenes/plastico-termo-verde.jpg",
-      descrpcion: "verde claro y blanco",
+      nombre: "Jabon Artesanal",
+      url: "./imagenes/personal-jabon-natural.webp",
+      descrpcion: "Avena, Miel y Menta",
       precio: 30000,
       favorito: false,
-      cantidadPedida: 1
+      cantidadPedida: 1,
+      categoria: "Aseo Personal"
     },
     {
       id: uuid(),
-      nombre: "Alcohol GEL",
-      url: "./imagenes/limpieza-gel-alcohol.jpg",
-      descrpcion: "Menta y sin olor",
-      precio: 15000,
+      nombre: "Perfume Raw",
+      url: "./imagenes/personal-perfume-raw.webp",
+      descrpcion: "Olor Amaderado",
+      precio: 55000,
       favorito: false,
-      cantidadPedida: 1
+      cantidadPedida: 1,
+      categoria: "Aseo Personal"
 
     },
     {
       id: uuid(),
-      nombre: "Recogedor Cepillo",
-      url: "./imagenes/platico-recogedor-cepillo.jpg",
-      descrpcion: "Rojo y Negro",
+      nombre: "Splash Victoria's Secret",
+      url: "./imagenes/personal-splash.webp",
+      descrpcion: "Olores florales",
       precio: 25000,
       favorito: false,
-      cantidadPedida: 1
+      cantidadPedida: 1,
+      categoria: "Aseo Personal" 
     },
     {
       id: uuid(),
-      nombre: "Alcohol GEL",
-      url: "./imagenes/limpieza-gel-alcohol.jpg",
-      descrpcion: "Menta y sin olor",
+      nombre: "Crema para ojos",
+      url: "./imagenes/personal-crema-ojos.webp",
+      descrpcion: "Antienvejecimiento",
+      precio: 45000,
+      favorito: false,
+      cantidadPedida: 1,
+      categoria: "Aseo Personal" 
+    },
+    {
+      id: uuid(),
+      nombre: "Juguete de Percha",
+      url: "./imagenes/mascotas-juguete.webp",
+      descrpcion: "Color uico",
       precio: 15000,
       favorito: false,
-      cantidadPedida: 1
+      cantidadPedida: 1,
+      categoria: "Mascotas" 
 
     },
     {
       id: uuid(),
-      nombre: "Recogedor Cepillo",
-      url: "./imagenes/platico-recogedor-cepillo.jpg",
-      descrpcion: "Rojo y Negro",
+      nombre: "Collar de Mascota",
+      url: "./imagenes/mascotas-collar.webp",
+      descrpcion: "Oro y Plata",
       precio: 25000,
       favorito: false,
-      cantidadPedida: 1
+      cantidadPedida: 1,
+      categoria:"Mascotas" 
     },
+    {
+      id: uuid(),
+      nombre: "Rodillo Removedor de Pelo",
+      url: "./imagenes/mascotas-recolector-pelo.webp",
+      descrpcion: "Azul y Rojo",
+      precio: 25000,
+      favorito: false,
+      cantidadPedida: 1,
+      categoria:"Mascotas" 
+    },
+    {
+      id: uuid(),
+      nombre: "JCepillo Exfoliante",
+      url: "./imagenes/plastico-cepillo-exfoliante.webp",
+      descrpcion: "Color uico",
+      precio: 15000,
+      favorito: false,
+      cantidadPedida: 1,
+      categoria: "Plásticos" 
+
+    },
+    {
+      id: uuid(),
+      nombre: "Jarra Con Tapa",
+      url: "./imagenes/plastico-jarra-tapa.webp",
+      descrpcion: "Diseño Innovador",
+      precio: 25000,
+      favorito: false,
+      cantidadPedida: 1,
+      categoria:"Plásticos" 
+    }
   ])
 
+  const [productosFiltrados, setProductosFiltrados] = useState([...datosBase])
+
   const [prodCarrito, setProdCarrito] = useState([])
+
+  const [validarTitulo, setValidarTitulo] = useState("Todos Los Prodcutos")
 
   const [totalPagar, setTotalPagar] = useState(0)
 
@@ -81,6 +132,7 @@ function App() {
       return producto
     })
     setDatosBase(productoActualizado)
+    
   }
 
   const setCantidadPedida = (id, valor) => {
@@ -117,17 +169,22 @@ function App() {
       setShowMenu(false)
       console.log(`se actualizo order = ${showOrder}`)
     }
-
   }
 
+  const crearProdFiltrados = (categoria) => {
+    let filtrados = datosBase.filter((producto) => producto.categoria === categoria)
+    let favoritos = datosBase.filter((producto) => producto.favorito === true)
+    setValidarTitulo(categoria)
+    categoria === "Favoritos"? setProductosFiltrados(favoritos) : setProductosFiltrados(filtrados)
+  }
 
   return (
     <div className="bg-[#262837] w-full min-h-screen ">
       <Sidebar showMenu={showMenu} />
       <Menu showMenu={showMenu} showOrder={showOrder} toggelMenuOrder={toggelMenuOrder} />
-      <Header />
+      <Header  crearProdFiltrados={crearProdFiltrados}/>
       <Payment showOrder={showOrder} toggelMenuOrder={toggelMenuOrder} prodCarrito={prodCarrito} deleteProdCart={deleteProdCart} datosBase={datosBase} setProdCarrito={setProdCarrito} setCantidadPedida={setCantidadPedida} totalPagar={totalPagar} />
-      <Body datosBase={datosBase} setLike={setLike} createProdCart={createProdCart} />
+      <Body validarTitulo={validarTitulo} datosBase={datosBase} productosFiltrados={productosFiltrados} setLike={setLike} createProdCart={createProdCart} />
     </div>
   )
 }

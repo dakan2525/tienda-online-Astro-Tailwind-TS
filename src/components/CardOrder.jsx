@@ -10,16 +10,16 @@ const CardOrder = ({ nombre, url, precio, id, deleteProdCart, cantidadPedida, se
     return (
         <>
             {/* Product */}
-            <div className="bg-gray-900 py-4 rounded-2xl p-2 mb-2 md:px-14 md:my-3 md:p-1  lg:mt-0 lg:px-2 lg:py-0  lg:mx-2 lg:mb-4">
+            <div className="text-white font-bold bg-[#1F1D2B] to-55% py-4 rounded-2xl p-2 mb-2  border-gray-500 border-b-[1px] border-r-[1px] shadow-xl shadow-slate-950 md:px-14 md:my-3 md:p-1  lg:mt-0 lg:px-2 lg:py-0  lg:mx-2 lg:mb-4">
                 {/* card producto */}
                 <div className="items-center text-center text-sm  grid grid-cols-6  pb-2 lg:pb-0 lg:m-0 lg:p-0 ">
-                    <img className="col-span-1 object-cover rounded-full w-14 h-14 md:w-28 md:h-28  md:relative md:mt-9    lg:mt-4 lg:h-24 lg:w-24 lg:col-span-2" src={url} alt="Jabon Natural" />
+                    <img className="col-span-1 object-center rounded-full w-14 h-14 md:w-28 md:h-28  md:relative md:mt-9    lg:mt-4 lg:h-24 lg:w-24 lg:col-span-2" src={url} alt="Jabon Natural" />
                     <div className="col-span-3  lg:col-span-2">
                         <h5>{nombre}</h5>
                         <p>$ {precioFormateado} COP</p>
                     </div>
                     <div>
-                        <input className="bg-[#262837] text-lg rounded-lg text-center  w-12 h-12 pt-1 ml-2 lg:ml-0 outline-none" onChange={(e) => setCantidadPedida(id, e.target.value)}
+                        <input className="text-white bg-[#262837] text-lg rounded-lg text-center  w-12 h-12 pt-1 ml-2 lg:ml-0 outline-none" onChange={(e) => setCantidadPedida(id, e.target.value)}
                             type="number" value={cantidadPedida} >
                         </input>
                     </div>

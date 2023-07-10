@@ -3,7 +3,7 @@ import {RxHamburgerMenu, } from "react-icons/rx";
 
 const Menu = (props) => {
 
-    const {showMenu, showOrder, toggelMenuOrder} = props
+    const {showMenu, toggelMenuOrder} = props
 
     return (
         <>{/* Menu movil*/}
