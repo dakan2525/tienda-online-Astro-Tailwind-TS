@@ -15,7 +15,7 @@ const Sidebar = (props) => {
             <div>
                 <ul className="">
                     <li >
-                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className="p- flex justify-center rounded-xl text-center" >
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className="mx-auto flex justify-center rounded-xl text-center md:p-0" >
                             <img src={logo} alt="logo" className="w-[4rem] h-[4rem]  md:w-[8rem] md:h-[6rem]" />
                         </button>
                     </li>
