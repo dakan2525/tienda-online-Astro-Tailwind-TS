@@ -15,43 +15,43 @@ const Sidebar = (props) => {
             <div>
                 <ul className="">
                     <li >
-                        <a href="#" className="p- flex justify-center rounded-xl text-center" >
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className="p- flex justify-center rounded-xl text-center" >
                             <img src={logo} alt="logo" className="w-[4rem] h-[4rem]  md:w-[8rem] md:h-[6rem]" />
-                        </a>
+                        </button>
                     </li>
                     <li className= {claseLiS} >
-                        <a href="#" className={claselinkS}>
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={claselinkS}>
                             <RiHomeSmile2Line className="text-3xl" />
-                        </a>
+                        </button>
                     </li>
                     <li className= {claseLiS} >
-                        <a href="#" className={claselinkS}>
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={claselinkS}>
                             <RiShoppingCartLine className="text-3xl " />
-                        </a>
+                        </button>
                     </li>
                     <li className= {claseLiS} >
-                        <a href="#" className={claselinkS}>
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={claselinkS}>
                             <RiMailAddLine className="text-3xl " />
-                        </a>
+                        </button>
                     </li>
                     <li className= {claseLiS} >
-                        <a href="#" className={claselinkS}>
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={claselinkS}>
                             <RiNotification2Line className="text-3xl " />
-                        </a>
+                        </button>
                     </li>
                     <li className= {claseLiS} >
-                        <a href="#" className={claselinkS}>
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={claselinkS}>
                             <RxGear className="text-3xl " />
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul className="">
                     <li className= {claseLiS} >
-                        <a href="#" className={claselinkS}>
+                        <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={claselinkS}>
                             <RxExit className="text-3xl " />
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>

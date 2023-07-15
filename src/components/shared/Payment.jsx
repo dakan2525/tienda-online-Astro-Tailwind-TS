@@ -26,9 +26,9 @@ const Payment = ({ showOrder, toggelMenuOrder, prodCarrito, deleteProdCart, setP
 
                 {/* pills */}
                 <div className="flex items-center gap-4 flex-wrap mb-8  ">
-                    <button className={btnPayment}> Donde comprar</button>
-                    <button className={btnPayment}> Domicilio </button>
-                    <button className={btnPayment}> Rappi</button>
+                    <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={btnPayment}> Donde comprar</button>
+                    <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={btnPayment}> Domicilio </button>
+                    <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className={btnPayment}> Rappi</button>
                 </div>
 
                 <div className="grid grid-cols-6 pb-6 p-1 mr-1">
@@ -68,7 +68,7 @@ const Payment = ({ showOrder, toggelMenuOrder, prodCarrito, deleteProdCart, setP
                     <span>${totalPagarFormateado} </span>
                 </div>
                 <div className=" md:text-center md:m-4">
-                    <button className="bg-[#F33C3E] border-2 text-white border-gray-500 rounded-lg w-full py-2 px-4 md:w-1/2 lg:py-0 ">
+                    <button onClick={() => alert("Este botón no está funcional por ahora, recuerde leer las notas del proyecto para ver el alcance funcional")} className="bg-[#F33C3E] border-2 text-white border-gray-500 rounded-lg w-full py-2 px-4 md:w-1/2 lg:py-0 ">
                         Continuar con el Pago
                     </button>
                 </div>
